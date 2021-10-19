@@ -1,0 +1,34 @@
+﻿@using BlazorNFC.Data
+
+<div>
+    <EditForm Model="_formInput" OnSubmit="@SubmitNFC">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label>NFC Read test</label>
+            <InputText class="form-control" @bind-Value="@_formInput.Input"></InputText>
+        </div>
+
+    </EditForm>
+
+    <div>
+        <label>Output</label>
+        <span>@_output</span>
+    </div>
+</div>
+
+@code
+{
+    private NFCInputModel _formInput = new NFCInputModel();
+    private String _output;
+
+    private void SubmitNFC()
+    {
+        _output = _formInput.Input;
+
+        // do something
+
+        // Reset the Model for new input.
+        _formInput = new NFCInputModel();
+    }
+}

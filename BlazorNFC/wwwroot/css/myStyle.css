@@ -1,0 +1,18 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(215,76,41);
+    background: linear-gradient(160deg, rgba(215,76,41,1) 0%, rgba(213,76,52,1) 11%, rgba(94,85,237,1) 85%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+main {
+    min-height: 100vh;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+}
