@@ -1,0 +1,24 @@
+﻿<h3>OnSelect</h3>
+
+<select value=@_selectedId @onchange="e => UpdateSelectedId(e)">
+    <option value="">Select an option</option>
+    @foreach(int item in _companyIds)
+    {
+        <option value="@item">Option @item</option>
+    }
+</select>
+<div class="alert">@_myMessage</div>
+@code {
+    private string _selectedId = "";
+    private List<int> _companyIds = new List<int>(){1, 2, 3};
+    private string _myMessage = "";
+
+    protected override void OnInitialized()
+    {
+    }
+
+    private void UpdateSelectedId(ChangeEventArgs e)
+    {
+        _myMessage = $"Message: selected id is '{e.Value}'";
+    }
+}
